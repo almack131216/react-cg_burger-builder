@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Cockpit.css";
 
 const cockpit = props => {
+  useEffect(() => {
+    // runs when component is created
+    // runs for every update, including the first one
+    console.log("[Cockpit.js] useEffect");
+    // http request
+    setTimeout(() => {
+      alert("Saved data to cloud?");
+    }, 1000);
+  }, []);
+
   const assignedClasses = [];
   let btnClass = "";
   if (props.showPersons) {
